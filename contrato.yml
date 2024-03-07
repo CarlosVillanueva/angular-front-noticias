@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: Microservicio de Noticias
+  version: 1.0.0
+  description: API para gestionar noticias destacadas
+
+paths:
+  /api/noticias:
+    get:
+      summary: Obtener todas las noticias
+      responses:
+        '200':
+          description: Éxito
+          content:
+            application/json:
+              example:
+                - titulo: Título de la Noticia 1
+                  descripcion: Descripción de la Noticia 1
+                  resumen: Resumen de la Noticia 1
+                  fechaPublicacion: '2024-03-07'
+                - titulo: Título de la Noticia 2
+                  descripcion: Descripción de la Noticia 2
+                  resumen: Resumen de la Noticia 2
+                  fechaPublicacion: '2024-03-06'
+
+  /api/noticias/buscar:
+    get:
+      summary: Buscar noticias por título
+      parameters:
+        - in: query
+          name: titulo
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Éxito
+          content:
+            application/json:
+              example:
+                - titulo: Título de la Noticia 1
+                  descripcion: Descripción de la Noticia 1
+                  resumen: Resumen de la Noticia 1
+                  fechaPublicacion: '2024-03-07'
+                - titulo: Título de la Noticia 2
+                  descripcion: Descripción de la Noticia 2
+                  resumen: Resumen de la Noticia 2
+                  fechaPublicacion: '2024-03-06'
+
+  /api/noticias:
+    post:
+      summary: Guardar una nueva noticia
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              titulo: Título de la Noticia 3
+              descripcion: Descripción de la Noticia 3
+              resumen: Resumen de la Noticia 3
+              fechaPublicacion: '2024-03-08'
+      responses:
+        '201':
+          description: Noticia creada con éxito
+          content:
+            application/json:
+              example:
+                titulo: Título de la Noticia 3
+                descripcion: Descripción de la Noticia 3
+                resumen: Resumen de la Noticia 3
+                fechaPublicacion: '2024-03-08'
+
+  /api/noticias/{id}:
+    delete:
+      summary: Borrar una noticia por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Noticia eliminada con éxito
