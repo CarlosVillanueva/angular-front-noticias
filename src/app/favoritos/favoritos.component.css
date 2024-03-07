@@ -1,0 +1,35 @@
+/* styles.css o styles.scss */
+
+.noticias-favoritas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .noticias-favoritas-table th, .noticias-favoritas-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .noticias-favoritas-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .noticias-favoritas-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .noticias-favoritas-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .noticias-favoritas-table button {
+    padding: 6px 10px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  

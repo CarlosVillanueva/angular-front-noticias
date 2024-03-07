@@ -1,0 +1,26 @@
+<!-- inicio.component.html -->
+
+<table class="noticias-table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Resumen</th>
+      <th>Fecha de Publicación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let noticia of noticias | slice:0:10; let i = index">
+      <td>{{ noticia.titulo }}</td>
+      <td>{{ noticia.descripcion }}</td>
+      <td>{{ noticia.resumen }}</td>
+      <td>{{ noticia.fechaPublicacion | date: 'dd MMM yyyy' }}</td>
+      <td>
+        <button (click)="agregarFavorito(noticia)">Agregar a Favoritos</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button routerLink="/favoritos">Ir a Favoritos</button>
